@@ -185,7 +185,7 @@ set $monitor DVI-D-0
 # set $monitor2 HDMI-A-1
 
 # Workspace monitor layout
-#Primary monitor
+# Primary monitor
 workspace $ws0 output $monitor
 workspace $ws1 output $monitor
 workspace $ws2 output $monitor
@@ -261,14 +261,18 @@ bindsym $mod+r mode "resize"
 #exec mons -e right
 
 # Make sure display is set @ 144Hz and on the left side of HDMI monitor
-exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --left-of HDMI-A-1
-exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
+#exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --left-of HDMI-A-1
+#exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
+
+# Single monitor setup
+exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # Set gamma at the right value as my monitors are kinda too bright
-exec xrandr --output DVI-D-0 --gamma 0.8
-exec xrandr --output HDMI-A-1 --gamma 0.8
+#exec xrandr --output DVI-D-0 --gamma 0.8
+#exec xrandr --output HDMI-A-1 --gamma 0.8
 
 # Redshift
+# Enabling redshift cancels gamma commands above
 exec redshift
 
 # Reload Xresources
@@ -300,10 +304,9 @@ smart_borders on
 # exec --no-startup-id dunst
 
 # Screenshot tool
-#bindsym Print exec sharenix-section #sharenix bad
 bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
-# Play videos/show images from primary selection using Super+PausePause key
+# Play videos/show images from primary selection using Super+Pause key
 bindsym $mod+Pause exec bash /home/milky/scripts/playprimary.sh
 
 # Play videos/show images from clipboard using Pause key
@@ -336,8 +339,6 @@ for_window [class="Steam"] move to workspace $ws5
 for_window [class="VSCodium"] move to workspace $ws2
 for_window [class="jetbrains-studio"] move to workspace $ws2
 for_window [class="Thunar"] move to workspace $ws6
-# for_window doesn't work with specific Wine windows for some weird reason like everything on this OS
-for_window [class="osu!.exe"] move to workspace $ws5 
 
 # mpv
 for_window [class="^mpv$"] floating enable
@@ -346,21 +347,11 @@ for_window [class="^mpv$"] floating enable
 for_window [class="^Wine$"] floating enable
 for_window [class="^steam_app_$"] floating enable
 
-## Deprecated since I switched to alacritty
-# Making a single terminal look fancy
-#bindsym $mod+shift+Return exec urxvt -g 100x30 -name floating 
-##848 by 558 - 100x30
-#for_window [instance="^floating$" class="^URxvt$"] floating enable, move position 536px 261px
-
 # Autostart
 #exec --no-startup-id i3-sensible-terminal
-#exec --no-startup-id firefox
-#exec --no-startup-id discord
-#exec --no-startup-id spotify
-
-# MAKE SURE MY MONITORS GET SET UP THE RIGHT WAY BECAUSE THEY APPARENTLY AREN'T SOMETIMES
-exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --left-of HDMI-A-1
-#exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
+#exec --no-startup-id chromium
+#exec --no-startup-id ripcord
+#exec --no-startup-id rhythmbox
 
 # Wacom CTH-480 area settings
 exec xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 0 15200 8550
