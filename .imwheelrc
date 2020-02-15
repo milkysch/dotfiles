@@ -1,0 +1,7 @@
+# Speed up scrolling for the document viewer
+"^chromium$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+"^ripcord$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
