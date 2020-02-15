@@ -17,6 +17,9 @@ export WINEFSYNC=1
 # Disable wine logging by default to speed up games
 export WINEDEBUG=-all
 
+# Vsync lmao, miss me with that
+export vblank_mode=0
+
 # Reduce audio delay in WINE at cost of CPU power
 # Actually processing power cost of this is so big
 # it's not worth using this patch outside of rhythm games
