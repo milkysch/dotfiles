@@ -112,11 +112,12 @@ font:
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
-
-    family: Cozette
+    family: Zpix
+    #family: JF Dot Shinonome Mincho 16
+    #family: Cozette
     #family: Misc Termsyn
     #size: 10
-    antialias: false
+    #antialias: false
   # Bold font face
   #bold:
     # Font family
@@ -140,13 +141,13 @@ font:
     #style: Italic
 
   # Point size
-  size: 10.0
+  size: 9.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 0
+    y: 5
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
