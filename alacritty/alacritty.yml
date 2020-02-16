@@ -113,7 +113,8 @@ font:
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
-    family: Misc Termsyn
+    family: Cozette
+    #family: Misc Termsyn
   # Bold font face
   #bold:
     # Font family
