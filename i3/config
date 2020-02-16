@@ -371,3 +371,6 @@ exec xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 4
 
 # Make mouse act like in Windows because I can't rid of 2 decades worth of muscle memory that easily
 #focus_follows_mouse no #nvm its really aids like that
+
+# unclutter hides mouse after inactivity which is perfect for a keyboard-driven tiling wm
+exec unclutter
