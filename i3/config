@@ -15,7 +15,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font Misc Termsyn:8
+font Cozette
+#font Misc Termsyn:8
 #font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -341,8 +342,9 @@ for_window [class="VSCodium"] move to workspace $ws2
 for_window [class="jetbrains-studio"] move to workspace $ws2
 for_window [class="Thunar"] move to workspace $ws6
 
-# mpv
+# Float photo/video players
 for_window [class="^mpv$"] floating enable
+for_window [class="^feh$"] floating enable
 
 # Random games that I rather have floating
 for_window [class="^Wine$"] floating enable
@@ -354,9 +356,13 @@ for_window [class="^steam_app_$"] floating enable
 #exec --no-startup-id ripcord
 #exec --no-startup-id rhythmbox
 
-# Wacom CTH-480 area settings
+# Wacom CTH-480
+# Area
 exec xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 0 15200 8550
 exec xsetwacom set "Wacom Intuos PT S Pen eraser" Area 0 0 15200 8550
+# Smoothing
+exec xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 2
+exec xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 4
 
 # Make mouse act like in Windows because I can't rid of 2 decades worth of muscle memory that easily
 #focus_follows_mouse no #nvm its really aids like that
