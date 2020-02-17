@@ -268,7 +268,7 @@ bindsym $mod+r mode "resize"
 #exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
 
 # Single monitor setup
-exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
+#exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # Set gamma at the right value as my monitors are kinda too bright
 #exec xrandr --output DVI-D-0 --gamma 0.8
@@ -276,11 +276,11 @@ exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # Redshift
 # Enabling redshift cancels gamma commands above
-exec redshift
+#exec redshift
 
 # mpDris2
 # MPRIS support for MPD
-exec mpDris2
+#exec mpDris2
 
 # Reload Xresources
 exec_always xrdb ~/.Xresources
