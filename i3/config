@@ -113,7 +113,6 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "0"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -123,21 +122,9 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-
-# Secondary monitor
-# set $ws20 "20"
-# set $ws21 "21"
-# set $ws22 "22"
-# set $ws23 "23"
-# set $ws24 "24"
-# set $ws25 "25"
-# set $ws26 "26"
-# set $ws27 "27"
-# set $ws28 "28"
-# set $ws29 "29"
+set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+grave workspace number $ws0
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -147,21 +134,9 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-
-# Secondary monitor
-# bindsym $mod2+grave workspace number $ws20
-# bindsym $mod2+1 workspace number $ws21
-# bindsym $mod2+2 workspace number $ws22
-# bindsym $mod2+3 workspace number $ws23
-# bindsym $mod2+4 workspace number $ws24
-# bindsym $mod2+5 workspace number $ws25
-# bindsym $mod2+6 workspace number $ws26
-# bindsym $mod2+7 workspace number $ws27
-# bindsym $mod2+8 workspace number $ws28
-# bindsym $mod2+9 workspace number $ws29
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+grave move container to workspace number $ws0
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -171,25 +146,12 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-
-# Secondary monitor
-# bindsym $mod2+Shift+grave move container to workspace number $ws20
-# bindsym $mod2+Shift+1 move container to workspace number $ws21
-# bindsym $mod2+Shift+2 move container to workspace number $ws22
-# bindsym $mod2+Shift+3 move container to workspace number $ws23
-# bindsym $mod2+Shift+4 move container to workspace number $ws24
-# bindsym $mod2+Shift+5 move container to workspace number $ws25
-# bindsym $mod2+Shift+6 move container to workspace number $ws26
-# bindsym $mod2+Shift+7 move container to workspace number $ws27
-# bindsym $mod2+Shift+8 move container to workspace number $ws28
-# bindsym $mod2+Shift+9 move container to workspace number $ws29
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 set $monitor DVI-D-0
-# set $monitor2 HDMI-A-1
 
 # Workspace monitor layout
 # Primary monitor
-workspace $ws0 output $monitor
 workspace $ws1 output $monitor
 workspace $ws2 output $monitor
 workspace $ws3 output $monitor
@@ -199,18 +161,7 @@ workspace $ws6 output $monitor
 workspace $ws7 output $monitor
 workspace $ws8 output $monitor
 workspace $ws9 output $monitor
-
-# Secondary monitor
-# workspace $ws20 output $monitor2
-# workspace $ws21 output $monitor2
-# workspace $ws22 output $monitor2
-# workspace $ws23 output $monitor2
-# workspace $ws24 output $monitor2
-# workspace $ws25 output $monitor2
-# workspace $ws26 output $monitor2
-# workspace $ws27 output $monitor2
-# workspace $ws28 output $monitor2
-# workspace $ws29 output $monitor2
+workspace $ws10 output $monitor
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -264,11 +215,18 @@ bindsym $mod+r mode "resize"
 #exec mons -e right
 
 # Make sure display is set @ 144Hz and on the left side of HDMI monitor
-#exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --left-of HDMI-A-1
+exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --left-of HDMI-A-1
 #exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
 
+# Alright, so there's this D-Sub to HDMI converter that I own which reports it's
+# own EDID instead of the monitor's, so in this case a new mode for xrandr needs to be added
+# (somehow this is impossible on Windows, when trying to set native resolution on it the desktop
+# will be indeed displayed at 1680x1050 but it will be upscaled to 1080p for some weirdass compatibility)
+exec xrandr --newmode "1680x1050_60.00"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
+exec xrandr --output HDMI-A-1 --mode 1680x1050_60.00 --rate 60 --pos 1920x540
+
 # Single monitor setup
-exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
+#exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # Set gamma at the right value as my monitors are kinda too bright
 #exec xrandr --output DVI-D-0 --gamma 0.8
@@ -374,3 +332,12 @@ exec xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 4
 
 # unclutter hides mouse after inactivity which is perfect for a keyboard-driven tiling wm
 exec unclutter
+
+# Scratchpad
+#bindsym $mod+Shift+backslash mark "alpha", move scratchpad
+#bindsym $mod+backslash [con_mark="alpha"] scratchpad show
+
+# Exec a terminal on startup and hide it to scratchpad
+exec --no-startup-id alacritty --title "scratchpad"
+for_window [title="scratchpad"] move scratchpad
+bindsym $mod+backslash [title="scratchpad"] scratchpad show
