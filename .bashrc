@@ -64,5 +64,6 @@ alias gamma="xrandr --output DVI-D-0 --gamma"
 alias saturation="/home/milky/scripts/saturation.pl DVI-D-0"
 alias fixvideo="xrandr --output DVI-D-0 --mode 1920x1080 --rate 144"
 alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
+alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 
 export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
