@@ -223,7 +223,9 @@ exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --left-of HDMI-A-1
 # (somehow this is impossible on Windows, when trying to set native resolution on it the desktop
 # will be indeed displayed at 1680x1050 but it will be upscaled to 1080p for some weirdass compatibility)
 exec xrandr --newmode "1680x1050_60.00"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
-exec xrandr --output HDMI-A-0 --mode 1680x1050_60.00 --rate 60 --pos 1920x540
+exec xrandr --addmode HDMI-A-0 1680x1050_60.00
+#exec xrandr --output HDMI-A-0 --mode 1680x1050_60.00 --rate 60 --pos 1920x540
+exec xrandr --output HDMI-A-0 --mode 1680x1050_60.00 --rate 60 --left-of eDP
 
 # Single monitor setup
 #exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
