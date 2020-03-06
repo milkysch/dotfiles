@@ -7,7 +7,8 @@ vidsites="youtube.com
     \|vimeo.com
     \|streamable.com
     \|gfycat.com
-    \|nicovideo.jp"
+    \|nicovideo.jp
+    \|twitch.tv"
 ext="${1##*.}"
 mpvFiles="mkv mp4 gif webm gifv"
 fehFiles="png jpg jpeg jpe"

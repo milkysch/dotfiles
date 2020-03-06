@@ -269,7 +269,10 @@ smart_borders on
 # exec --no-startup-id dunst
 
 # Screenshot tool
+# maim for some weird reason didn't want to capture a screenshot from my games
 bindsym Print exec maim -s | xclip -selection clipboard -t image/png
+#bindsym Print exec flameshot gui
+
 
 # Play videos/show images from primary selection using Super+Pause key
 bindsym $mod+Pause exec bash /home/milky/scripts/playprimary.sh
