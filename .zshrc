@@ -1,9 +1,4 @@
-#
-# ~/.bashrc
-#
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# Created by newuser for 5.8
 
 # Make QT5 use GTK+ theme, example qBittorrent
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -67,10 +62,53 @@ alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
 
-export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+# zsh
+autoload -Uz compinit promptinit
+compinit
+promptinit
+prompt fade blue
+ttyctl -f
 
-# motd
-#screenfetch # too slow
-#echo ""
-todo
-echo ""
+# saving history to a file
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+# autocompletion with arrow-key interface
+zstyle ':completion:*' menu select
+
+# sudo autocompletion
+zstyle ':completion::complete:*' gain-privileges 1
+
+setopt COMPLETE_ALIASES
+
+# dir stack, access with dirs -v, use with cd -<number>
+autoload -Uz add-zsh-hook
+
+DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
+if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
+	dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
+	[[ -d "${dirstack[1]}" ]] && cd -- "${dirstack[1]}"
+fi
+chpwd_dirstack() {
+	print -l -- "$PWD" "${(u)dirstack[@]}" > "$DIRSTACKFILE"
+}
+add-zsh-hook -Uz chpwd chpwd_dirstack
+
+DIRSTACKSIZE='20'
+
+setopt AUTO_PUSHD PUSHD_SILENT PUSHD_TO_HOME
+
+## Remove duplicate entries
+setopt PUSHD_IGNORE_DUPS
+
+## This reverts the +/- operators.
+setopt PUSHD_MINUS
+
+# end of dir stack
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line

@@ -341,6 +341,6 @@ exec unclutter
 #bindsym $mod+backslash [con_mark="alpha"] scratchpad show
 
 # Exec a terminal on startup and hide it to scratchpad
-exec --no-startup-id alacritty --class "scratchpad" -e tmux
+exec --no-startup-id kitty --class "scratchpad"
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+grave [instance="scratchpad"] scratchpad show
