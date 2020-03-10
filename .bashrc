@@ -74,3 +74,5 @@ export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr
 #echo ""
 todo
 echo ""
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
