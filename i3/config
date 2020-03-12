@@ -324,11 +324,11 @@ for_window [class="^steam_app_$"] floating enable
 
 # Wacom CTH-480
 # Area
-exec xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 0 15200 8550
-exec xsetwacom set "Wacom Intuos PT S Pen eraser" Area 0 0 15200 8550
+exec xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 1500 12000 8250
+exec xsetwacom set "Wacom Intuos PT S Pen eraser" Area 0 1500 12000 8250
 # Smoothing
-exec xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 2
-exec xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 4
+exec xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 1
+exec xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 1
 
 # Make mouse act like in Windows because I can't rid of 2 decades worth of muscle memory that easily
 #focus_follows_mouse no #nvm its really aids like that

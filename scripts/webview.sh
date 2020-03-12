@@ -21,10 +21,10 @@ then
 else
 #    if echo $mpvFiles | grep -w $ext > /dev/null; then
 #        notify-send "$(echo -e "Now playing in PIP mpv\n $1")"
-#        mpv ---ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best" -x11-name=MPV-Q --input-file=$HOME/.mpvinput --loop "$1" > /dev/null &
+#        mpv ---ytdl-format="bestvideo[height<=?720][vcodec!=vp9]+bestaudio/best[height<=?720]/best" -x11-name=MPV-Q --input-file=$HOME/.mpvinput --loop "$1" > /dev/null &
     #elif echo "$@" | grep "$vidsites">/dev/null; then
     if echo "$@" | grep "$vidsites">/dev/null; then
         notify-send "$(echo -e "Launching PIP mpv and playing \n $1")"
-        mpv --ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best" --ytdl-raw-options=netrc= --x11-name=MPV-Q --input-file=$HOME/.mpvinput "$1" > /dev/null &
+        mpv --ytdl-format="bestvideo[height<=?720][vcodec!=vp9]+bestaudio/best[height<=?720]/best" --ytdl-raw-options=netrc= --x11-name=MPV-Q --input-file=$HOME/.mpvinput "$1" > /dev/null &
     fi
 fi
