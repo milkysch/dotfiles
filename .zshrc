@@ -1,3 +1,6 @@
+# Turn off QT5 HiDPI scaling
+export QT_SCALE_FACTOR=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 # Make QT5 use GTK+ theme, example qBittorrent
 export QT_QPA_PLATFORMTHEME=qt5ct
