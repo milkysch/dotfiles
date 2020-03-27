@@ -325,6 +325,9 @@ for_window [class="^Wine$"] floating enable
 for_window [class="^steam_app_$"] floating enable
 
 # Autostart
+# KDE Connect for remote control
+exec --no-startup-id /usr/lib/kdeconnectd
+exec --no-startup-id /usr/bin/indicator-kdeconnect
 #exec --no-startup-id i3-sensible-terminal
 #exec --no-startup-id chromium
 #exec --no-startup-id ripcord
@@ -332,8 +335,8 @@ for_window [class="^steam_app_$"] floating enable
 
 # Wacom CTH-480
 # Area
-exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Area 2000 2000 8900 7175
-exec_always xsetwacom set "Wacom Intuos PT S Pen eraser" Area 2000 2000 8900 7175
+exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 2000 6900 7175
+exec_always xsetwacom set "Wacom Intuos PT S Pen eraser" Area 0 2000 6900 7175
 # Smoothing
 exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 1
 exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 2
@@ -342,7 +345,7 @@ exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 2
 #focus_follows_mouse no #nvm its really aids like that
 
 # unclutter hides mouse after inactivity which is perfect for a keyboard-driven tiling wm
-exec unclutter
+#exec unclutter
 
 # Scratchpad
 #bindsym $mod+Shift+backslash mark "alpha", move scratchpad

@@ -8,6 +8,10 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # ACO - apparently faster shader compilation but can be unstable
 export RADV_PERFTEST=aco
 
+# DXVK async shader compilation, gets rid of stutters
+# but anticheat might not like it
+export DXVK_ASYNC=1
+
 # Wine TKG FSYNC
 export WINEFSYNC=1
 
