@@ -240,11 +240,11 @@ exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # Redshift
 # Enabling redshift cancels gamma commands above
-exec redshift
+#exec redshift
 
 # mpDris2
 # MPRIS support for MPD
-exec mpDris2
+#exec mpDris2
 
 # Reload Xresources
 exec_always xrdb ~/.Xresources
