@@ -9,6 +9,23 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.foreground #f0f0f0
+set_from_resource $bg i3wm.background #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 set $mod Mod4
 # Alt controls second monitor workspaces
 #set $mod2 Mod1
@@ -156,7 +173,7 @@ set $monitor2 HDMI-A-1
 
 # Workspace monitor layout
 # Primary monitor
-workspace $ws0 output $monitor2
+#workspace $ws0 output $monitor2
 workspace $ws1 output $monitor
 workspace $ws2 output $monitor
 workspace $ws3 output $monitor
@@ -260,7 +277,7 @@ bindsym $mod+Ctrl+l exec betterlockscreen -l dim -t "Zzz..."
 #exec --no-startup-id ibus-daemon -drx
 
 # Program launcher
-bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Terminus (TTF) 12" -theme solarized_alternate 
+bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Terminus (TTF) 12" -theme "~/.cache/wal/colors-rofi-dark.rasi"
 
 # Gaps Settings
 for_window [class=".*"] border pixel 1
@@ -345,7 +362,7 @@ exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 2
 #focus_follows_mouse no #nvm its really aids like that
 
 # unclutter hides mouse after inactivity which is perfect for a keyboard-driven tiling wm
-#exec unclutter
+exec unclutter
 
 # Scratchpad
 #bindsym $mod+Shift+backslash mark "alpha", move scratchpad
