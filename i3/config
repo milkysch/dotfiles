@@ -18,7 +18,7 @@ set_from_resource $fg i3wm.foreground #f0f0f0
 set_from_resource $bg i3wm.background #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused          $fg     $bg     $fg  $bg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
@@ -257,11 +257,11 @@ exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # Redshift
 # Enabling redshift cancels gamma commands above
-exec redshift
+#exec redshift
 
 # mpDris2
 # MPRIS support for MPD
-exec mpDris2
+#exec mpDris2
 
 # Reload Xresources
 exec_always xrdb ~/.Xresources
@@ -277,12 +277,12 @@ bindsym $mod+Ctrl+l exec betterlockscreen -l dim -t "Zzz..."
 #exec --no-startup-id ibus-daemon -drx
 
 # Program launcher
-bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Terminus (TTF) 12" -theme "~/.cache/wal/colors-rofi-dark.rasi"
+bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Cozette 9" -theme "~/.cache/wal/colors-rofi-dark.rasi"
 
 # Gaps Settings
-for_window [class=".*"] border pixel 1
-#gaps inner 16
-#gaps outer 2
+for_window [class=".*"] border pixel 2
+gaps inner 8
+gaps outer 2
 smart_gaps on
 smart_borders on
 
@@ -298,10 +298,10 @@ bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
 
 # Play videos/show images from primary selection using Super+Pause key
-bindsym $mod+Pause exec bash /home/milky/scripts/playprimary.sh
+bindsym $mod+Pause exec bash ~/scripts/playprimary.sh
 
 # Play videos/show images from clipboard using Pause key
-bindsym Pause exec bash /home/milky/scripts/playclipboard.sh
+bindsym Pause exec bash ~/scripts/playclipboard.sh
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -343,8 +343,8 @@ for_window [class="^steam_app_$"] floating enable
 
 # Autostart
 # KDE Connect for remote control
-exec --no-startup-id /usr/lib/kdeconnectd
-exec --no-startup-id /usr/bin/indicator-kdeconnect
+#exec --no-startup-id /usr/lib/kdeconnectd
+#exec --no-startup-id /usr/bin/indicator-kdeconnect
 #exec --no-startup-id i3-sensible-terminal
 #exec --no-startup-id chromium
 #exec --no-startup-id ripcord

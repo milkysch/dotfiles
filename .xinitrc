@@ -10,7 +10,7 @@ systemctl --user import-environment DISPLAY
 setxkbmap pl
 
 ## Start IMWheel to get proper scroll speed
-imwheel &
+#imwheel &
 
 # Japanese support
 ibus-daemon -drx
