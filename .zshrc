@@ -1,3 +1,9 @@
+# Editor settings
+export VISUAL=vim
+
+# pip stores binaries here
+export PATH=$PATH:/home/renne/.local/bin
+
 # Oh haha, fuck you.
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
@@ -18,8 +24,11 @@ export DXVK_ASYNC=1
 # Wine TKG FSYNC
 export WINEFSYNC=1
 
-# Disable wine logging by default to speed up games
+# Disable logging for game related stuff to get better performance
 export WINEDEBUG=-all
+export DXVK_LOG_LEVEL=none
+export VKD3D_DEBUG=none
+export VKD3D_SHADER_DEBUG=none
 
 # Vsync lmao, miss me with that
 export vblank_mode=0
@@ -30,9 +39,6 @@ export vblank_mode=0
 # Literally 1 CPU core working full time for pulseaudio only
 # because of this thing.
 #export STAGING_AUDIO_DURATION=20000
-
-# DXVK keeps on logging so hard it lags my games
-export DXVK_LOG_LEVEL=none
 
 # i3 terminal variable
 export TERMINAL=kitty
@@ -46,9 +52,9 @@ export QT_IM_MODULE=ibus
 #export QT_IM_MODULE=xim
 #export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
 
-# vitasdk
-export VITASDK=/usr/local/vitasdk
-export PATH=$VITASDK/bin:$PATH # add vitasdk tool to $PATH
+# vitasdk (now dolcesdk)
+export DOLCESDK=/usr/local/dolcesdk
+export PATH=$DOLCESDK/bin:$PATH 
 
 # Aliases
 alias ls='ls --color=auto'
@@ -69,7 +75,8 @@ alias saturation="/home/renne/scripts/saturation.pl DVI-D-0"
 alias fixvideo="xrandr --output DVI-D-0 --mode 1920x1080 --rate 144"
 alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
-alias psvita="mpv /dev/video0 no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
+alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
+alias dislock="sudo sh /home/renne/scripts/unlock.sh"
 
 # saving history to a file
 HISTFILE=~/.zsh_history
