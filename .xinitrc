@@ -1,5 +1,7 @@
-
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# BenQ XL2411Z ICM profile
+/usr/bin/xcalib -d :0 /usr/share/color/icc/colord/benq120.icc
 
 ## dunst service bug workaround
 # https://github.com/dunst-project/dunst/issues/347

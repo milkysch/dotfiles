@@ -186,7 +186,7 @@ workspace $ws9 output $monitor
 workspace $ws10 output $monitor
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -237,6 +237,7 @@ bindsym $mod+r mode "resize"
 #exec mons -e right
 
 # Make sure display is set @ 144Hz and on the left side of HDMI monitor
+# Currently using 120Hz
 exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 #exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
 
@@ -261,7 +262,7 @@ exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
 
 # mpDris2
 # MPRIS support for MPD
-#exec mpDris2
+exec mpDris2
 
 # Reload Xresources
 exec_always xrdb ~/.Xresources
@@ -336,6 +337,7 @@ for_window [class="^mpv$"] floating enable
 for_window [class="^feh$"] floating enable
 for_window [class="^sxiv$"] floating enable
 for_window [class="^scrcpy$"] floating enable
+#for_window [class="^anbox$"] floating enable
 
 # Random games that I rather have floating
 for_window [class="^Wine$"] floating enable
@@ -372,3 +374,11 @@ exec unclutter
 exec --no-startup-id kitty --class "scratchpad"
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+grave [instance="scratchpad"] scratchpad show
+
+## Clipboard
+# Start clipster daemon
+exec --no-startup-id clipster -d
+# shortcut to selection widget (primary)
+bindsym $mod+c exec clipster -sp
+bindsym $mod+Shift+c exec clipster -sc
+

@@ -14,6 +14,14 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # Make QT5 use GTK+ theme, example qBittorrent
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+# PBA disable, I've got no idea what this does but people say
+# that it improves DXVK performance in games like League of Legends
+export PBA_DISABLE=1
+
+# OpenGL multithreading for AMD
+# shit's unstable yo
+#export mesa_glthread=true
+
 # ACO - apparently faster shader compilation but can be unstable
 export RADV_PERFTEST=aco
 
@@ -31,7 +39,7 @@ export VKD3D_DEBUG=none
 export VKD3D_SHADER_DEBUG=none
 
 # Vsync lmao, miss me with that
-export vblank_mode=0
+#export vblank_mode=0
 
 # Reduce audio delay in WINE at cost of CPU power
 # Actually processing power cost of this is so big
@@ -77,6 +85,8 @@ alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
 alias dislock="sudo sh /home/renne/scripts/unlock.sh"
+alias osu="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
+alias wine-lol="MANGOHUD=1 WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
 
 # saving history to a file
 HISTFILE=~/.zsh_history
