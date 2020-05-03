@@ -381,4 +381,3 @@ exec --no-startup-id clipster -d
 # shortcut to selection widget (primary)
 bindsym $mod+c exec clipster -sp
 bindsym $mod+Shift+c exec clipster -sc
-
