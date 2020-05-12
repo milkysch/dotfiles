@@ -28,7 +28,7 @@ client.background       $bg
 
 set $mod Mod4
 # Alt controls second monitor workspaces
-#set $mod2 Mod1
+set $mod2 Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -141,6 +141,17 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
 
 # switch to workspace
 bindcode $mod+23 workspace number $ws0
@@ -154,6 +165,16 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod2+1 workspace number $ws11
+bindsym $mod2+2 workspace number $ws12
+bindsym $mod2+3 workspace number $ws13
+bindsym $mod2+4 workspace number $ws14
+bindsym $mod2+5 workspace number $ws15
+bindsym $mod2+6 workspace number $ws16
+bindsym $mod2+7 workspace number $ws17
+bindsym $mod2+8 workspace number $ws18
+bindsym $mod2+9 workspace number $ws19
+bindsym $mod2+0 workspace number $ws20
 
 # move focused container to workspace
 bindcode $mod+Shift+23 move container to workspace number $ws0
@@ -167,13 +188,24 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod2+Shift+1 move container to workspace number $ws11
+bindsym $mod2+Shift+2 move container to workspace number $ws12
+bindsym $mod2+Shift+3 move container to workspace number $ws13
+bindsym $mod2+Shift+4 move container to workspace number $ws14
+bindsym $mod2+Shift+5 move container to workspace number $ws15
+bindsym $mod2+Shift+6 move container to workspace number $ws16
+bindsym $mod2+Shift+7 move container to workspace number $ws17
+bindsym $mod2+Shift+8 move container to workspace number $ws18
+bindsym $mod2+Shift+9 move container to workspace number $ws19
+bindsym $mod2+Shift+0 move container to workspace number $ws20
+
 
 set $monitor DVI-D-0
 set $monitor2 HDMI-A-1
 
 # Workspace monitor layout
 # Primary monitor
-#workspace $ws0 output $monitor2
+workspace $ws0 output $monitor
 workspace $ws1 output $monitor
 workspace $ws2 output $monitor
 workspace $ws3 output $monitor
@@ -184,6 +216,18 @@ workspace $ws7 output $monitor
 workspace $ws8 output $monitor
 workspace $ws9 output $monitor
 workspace $ws10 output $monitor
+workspace $ws11 output $monitor2
+workspace $ws12 output $monitor2
+workspace $ws13 output $monitor2
+workspace $ws14 output $monitor2
+workspace $ws15 output $monitor2
+workspace $ws16 output $monitor2
+workspace $ws17 output $monitor2
+workspace $ws18 output $monitor2
+workspace $ws19 output $monitor2
+workspace $ws20 output $monitor2
+
+
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -237,24 +281,11 @@ bindsym $mod+r mode "resize"
 #exec mons -e right
 
 # Make sure display is set @ 144Hz and on the left side of HDMI monitor
-# Currently using 120Hz
-exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
-#exec xrandr --output HDMI-A-1 --mode 1680x1050 --rate 60 --right-of DVI-D-0
+# Currently using 120Hz, not anymore
+exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --primary
 
-# Alright, so there's this D-Sub to HDMI converter that I own which reports it's
-# own EDID instead of the monitor's, so in this case a new mode for xrandr needs to be added
-# (somehow this is impossible on Windows, when trying to set native resolution on it the desktop
-# will be indeed displayed at 1680x1050 but it will be upscaled to 1080p for some weirdass compatibility)
-#exec xrandr --newmode "1680x1050_60.00"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
-#exec xrandr --addmode HDMI-A-1 1680x1050_60.00
-#exec xrandr --output HDMI-A-1 --mode 1680x1050_60.00 --rate 60 --left-of DVI-D-0
-
-# Single monitor setup
-#exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144
-
-# Set gamma at the right value as my monitors are kinda too bright
-#exec xrandr --output DVI-D-0 --gamma 0.8
-#exec xrandr --output HDMI-A-1 --gamma 0.8
+exec xrandr --output DVI-D-0 --gamma 0.83
+#exec xrandr --output HDMI-A-1 --gamma 1
 
 # Redshift
 # Enabling redshift cancels gamma commands above
@@ -281,8 +312,8 @@ bindsym $mod+Ctrl+l exec betterlockscreen -l dim -t "Zzz..."
 bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Cozette 9" -theme "~/.cache/wal/colors-rofi-dark.rasi"
 
 # Gaps Settings
-for_window [class=".*"] border pixel 2
-gaps inner 8
+for_window [class=".*"] border pixel 1
+gaps inner 2
 gaps outer 2
 smart_gaps on
 smart_borders on
@@ -321,16 +352,18 @@ for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Require
 for_window [title="^Steam Keyboard$"] floating enable
 
 # Force windows to their specific workspaces
-for_window [class="Spotify"] move to workspace $ws4
-for_window [class="Waterfox"] move to workspace $ws1
-for_window [class="Chromium"] move to workspace $ws1
+#for_window [class="Spotify"] move to workspace $ws4
+#for_window [class="Waterfox"] move to workspace $ws1
+#for_window [class="Chromium"] move to workspace $ws1
 #for_window [class="Ripcord"] move to workspace $ws3
-for_window [class="deadbeef"] move to workspace $ws4
-for_window [class="Rhythmbox"] move to workspace $ws4
-for_window [class="Steam"] move to workspace $ws5
-for_window [class="VSCodium"] move to workspace $ws2
-for_window [class="jetbrains-studio"] move to workspace $ws2
-for_window [class="Thunar"] move to workspace $ws6
+#for_window [class="discord"] move to workspace $ws3
+#for_window [class="Riot"] move to workspace $ws3
+#for_window [class="deadbeef"] move to workspace $ws4
+#for_window [class="Rhythmbox"] move to workspace $ws4
+#for_window [class="Steam"] move to workspace $ws5
+#for_window [class="VSCodium"] move to workspace $ws2
+#for_window [class="jetbrains-studio"] move to workspace $ws2
+#for_window [class="Thunar"] move to workspace $ws6
 
 # Float photo/video players
 for_window [class="^mpv$"] floating enable
