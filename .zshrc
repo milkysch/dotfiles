@@ -20,7 +20,7 @@ export PBA_DISABLE=1
 
 # OpenGL multithreading for AMD
 # shit's unstable yo
-#export mesa_glthread=true
+export mesa_glthread=true
 
 # ACO - apparently faster shader compilation but can be unstable
 export RADV_PERFTEST=aco
@@ -87,6 +87,7 @@ alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-s
 alias dislock="sudo sh /home/renne/scripts/unlock.sh"
 alias osu="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
 alias wine-lol="MANGOHUD=1 WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
+alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 # saving history to a file
 HISTFILE=~/.zsh_history

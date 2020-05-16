@@ -21,6 +21,9 @@ setxkbmap pl
 #imwheel &
 
 # Japanese support
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 ibus-daemon -drx
 
 ## Start i3wm
