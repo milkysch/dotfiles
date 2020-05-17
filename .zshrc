@@ -39,7 +39,8 @@ export VKD3D_DEBUG=none
 export VKD3D_SHADER_DEBUG=none
 
 # Vsync lmao, miss me with that
-#export vblank_mode=0
+# I need this nowadays, for mpv, to get that really good movie experience
+export vblank_mode=0
 
 # Reduce audio delay in WINE at cost of CPU power
 # Actually processing power cost of this is so big
@@ -84,7 +85,7 @@ alias fixvideo="xrandr --output DVI-D-0 --mode 1920x1080 --rate 144"
 alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
-alias dislock="sudo sh /home/renne/scripts/unlock.sh"
+alias dislock="sudo sh /home/renne/scripts/unlockalt.sh"
 alias osu="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
 alias wine-lol="MANGOHUD=1 WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
 alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"

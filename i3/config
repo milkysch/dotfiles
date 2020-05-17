@@ -281,8 +281,9 @@ bindsym $mod+r mode "resize"
 #exec mons -e right
 
 # Make sure display is set @ 144Hz and on the left side of HDMI monitor
-# Currently using 120Hz, not anymore
-exec xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 --primary
+# This xrandr command sometimes doesn't work when it's executed by i3
+# Therefore I placed this line in an additional startup script
+# down below
 
 exec xrandr --output DVI-D-0 --gamma 0.83
 #exec xrandr --output HDMI-A-1 --gamma 1
