@@ -334,7 +334,7 @@ bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
 
 # Play videos/show images from primary selection using Super+Pause key
-bindsym $mod+Pause exec bash ~/scripts/playprimary.sh
+# bindsym $mod+Pause exec bash ~/scripts/playprimary.sh
 
 # Play videos/show images from clipboard using Pause key
 bindsym Pause exec bash ~/scripts/playclipboard.sh
@@ -394,11 +394,11 @@ for_window [class="^steam_app_$"] floating enable
 
 # Wacom CTH-480
 # Area
-exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 2000 6900 7175
-exec_always xsetwacom set "Wacom Intuos PT S Pen eraser" Area 0 2000 6900 7175
+#exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Area 0 2000 6900 7175
+#exec_always xsetwacom set "Wacom Intuos PT S Pen eraser" Area 0 2000 6900 7175
 # Smoothing
-exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 1
-exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 2
+#exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 1
+#exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 2
 
 # Make mouse act like in Windows because I can't rid of 2 decades worth of muscle memory that easily
 #focus_follows_mouse no #nvm its really aids like that

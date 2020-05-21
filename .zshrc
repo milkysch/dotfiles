@@ -86,8 +86,8 @@ alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
 alias dislock="sudo sh /home/renne/scripts/unlockalt.sh"
-alias osu="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
-alias wine-lol="MANGOHUD=1 WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
+alias osu="WINEPREFIX=~/.wine-osu wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
+alias wine-lol="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
 alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 # saving history to a file
