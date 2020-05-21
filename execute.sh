@@ -21,5 +21,5 @@ do
    ln -s $F $HOME/$(basename $F)
 done
 echo "Symlinking .ncmpcpp to $HOME/.ncmpcpp"
-ln -S $(dirname $(readlink -f $0))/.ncmpcpp $HOME/.ncmpcpp
+ln -s $(dirname $(readlink -f $0))/.ncmpcpp $HOME/.ncmpcpp
 echo "Everything's done!"
