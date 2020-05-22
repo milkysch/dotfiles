@@ -411,7 +411,11 @@ exec unclutter
 #bindsym $mod+backslash [con_mark="alpha"] scratchpad show
 
 # Exec a terminal on startup and hide it to scratchpad
-exec --no-startup-id kitty --class "scratchpad"
+
+# I want to use a bitmap font for my terminal
+# so I switched to rxvt-unicode
+#exec --no-startup-id kitty --class "scratchpad"
+exec --no-startup-id urxvt -name "scratchpad" -e tmux
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+grave [instance="scratchpad"] scratchpad show
 

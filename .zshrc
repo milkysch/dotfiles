@@ -19,7 +19,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export PBA_DISABLE=1
 
 # OpenGL multithreading for AMD
-# shit's unstable yo
 export mesa_glthread=true
 
 # ACO - apparently faster shader compilation but can be unstable
@@ -38,9 +37,9 @@ export DXVK_LOG_LEVEL=none
 export VKD3D_DEBUG=none
 export VKD3D_SHADER_DEBUG=none
 
-# Vsync lmao, miss me with that
-# I need this nowadays, for mpv, to get that really good movie experience
-export vblank_mode=0
+# Vsync
+# mpv does magic with vsync so I'll let it by
+#export vblank_mode=0
 
 # Reduce audio delay in WINE at cost of CPU power
 # Actually processing power cost of this is so big
@@ -50,7 +49,9 @@ export vblank_mode=0
 #export STAGING_AUDIO_DURATION=20000
 
 # i3 terminal variable
-export TERMINAL=kitty
+# kitty's lack of bitmap font support outweights all of rxvt-unicode problems
+export TERMINAL=urxvt
+#export TERMINAL=kitty
 
 # IBus
 export GTK_IM_MODULE=ibus
