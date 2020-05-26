@@ -2,7 +2,7 @@
 This is a repository where I store my personal configuration files.
 
 wpgtk will keep on changing dunst config which is an undesirable behavior,  
-dirty way to take care of this, is using this command:  
+dirty way to take care of this, is by using this command:  
 `sudo chattr +i dotfiles/.config/dunst/dunstrc`
 
 # Steps for ja_JP.sjis
