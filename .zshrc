@@ -1,5 +1,7 @@
 # Editor settings
-export VISUAL=vim
+# ewrap opens nvim in a split window when tmux is running
+export VISUAL=ewrap
+export EDITOR=nvim
 
 # pip stores binaries here
 export PATH=$PATH:/home/renne/.local/bin
@@ -38,8 +40,7 @@ export VKD3D_DEBUG=none
 export VKD3D_SHADER_DEBUG=none
 
 # Vsync
-# mpv does magic with vsync so I'll let it by
-#export vblank_mode=0
+export vblank_mode=0
 
 # Reduce audio delay in WINE at cost of CPU power
 # Actually processing power cost of this is so big
@@ -61,10 +62,6 @@ export QT_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=xim
 #export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
-
-# vitasdk (now dolcesdk)
-export DOLCESDK=/usr/local/dolcesdk
-export PATH=$DOLCESDK/bin:$PATH 
 
 # Aliases
 alias ls='ls --color=auto'
@@ -88,8 +85,12 @@ alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
 alias dislock="sudo sh ~/critical/unlockalt.sh"
 alias osu="WINEPREFIX=~/.wine-osu wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
-alias wine-lol="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
+alias wine-lol-en="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe -locale=en_US"
+alias wine-lol-jp="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe -locale=ja_JP"
 alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+alias mpv="vblank_mode=1 mpv"
+alias nnn="nnn -e -x"
+alias vim="nvim" # xD
 
 # saving history to a file
 HISTFILE=~/.zsh_history

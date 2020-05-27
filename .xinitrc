@@ -18,7 +18,7 @@ systemctl --user import-environment DISPLAY
 setxkbmap pl
 
 ## Start IMWheel to get proper scroll speed
-#imwheel &
+imwheel &
 
 # Japanese support
 export GTK_IM_MODULE=ibus

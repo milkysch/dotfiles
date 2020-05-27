@@ -418,13 +418,3 @@ exec unclutter
 exec --no-startup-id urxvt -name "scratchpad" -e tmux
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+grave [instance="scratchpad"] scratchpad show
-
-## Clipboard
-# Start clipster daemon
-exec --no-startup-id clipster -d
-# shortcut to selection widget (primary)
-bindsym $mod+c exec clipster -sp
-bindsym $mod+Shift+c exec clipster -sc
-
-bindsym $mod+Shift+o exec picom-trans -c -10
-bindsym $mod+Shift+p exec picom-trans -c +10

@@ -1,7 +1,14 @@
 #include "/home/renne/.cache/wal/colors.Xresources"
 
-URxvt.font: xft:Cozette:style=Medium:size=12,\
-xft:Zpix:style=Regular:size=9
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+URxvt.font: xft:Cozette:style=Medium:size=12,xft:Zpix:style=Regular:size=9
 URxvt.boldFont: 
 URxvt.italicFont: 
 URxvt.letterSpace: -1
@@ -16,6 +23,7 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
+URxvt.preeditType:Root
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
 URxvt.keysym.Control-Up: \033[1;5A

@@ -1,2 +1,3 @@
 .config/mpd/database
 .config/mpv/shaders/*
+.config/nvim/plugged/*
