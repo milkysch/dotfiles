@@ -1,4 +1,4 @@
-#include "/home/renne/.cache/wal/colors.Xresources"
+#include "/home/milky/.cache/wal/colors.Xresources"
 
 Xft.dpi: 96
 Xft.antialias: true

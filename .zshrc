@@ -4,7 +4,7 @@ export VISUAL=ewrap
 export EDITOR=nvim
 
 # pip stores binaries here
-export PATH=$PATH:/home/renne/.local/bin
+export PATH=$PATH:/home/milky/.local/bin
 
 # Oh haha, fuck you.
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -113,7 +113,7 @@ bindkey  "^[[F"   end-of-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export ZSH="/home/renne/.oh-my-zsh"
+export ZSH="/home/milky/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 

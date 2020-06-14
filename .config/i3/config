@@ -200,8 +200,8 @@ bindsym $mod2+Shift+9 move container to workspace number $ws19
 bindsym $mod2+Shift+0 move container to workspace number $ws20
 
 
-set $monitor DVI-D-0
-set $monitor2 HDMI-A-1
+set $monitor eDP
+set $monitor2 HDMI-A-0
 
 # Workspace monitor layout
 # Primary monitor
