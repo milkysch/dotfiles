@@ -285,11 +285,12 @@ bindsym $mod+r mode "resize"
 # Therefore I placed this line in an additional startup script
 # down below
 
-exec xrandr --output DVI-D-0 --gamma 0.83
+#exec xrandr --output DVI-D-0 --gamma 0.83
 #exec xrandr --output HDMI-A-1 --gamma 1
 
 # Set secondary monitor at 72hz to get perfect sync with 24fps movies
-exec bash ~/scripts/72hzmonitor.sh
+# We don't need this on a laptop
+#exec bash ~/scripts/72hzmonitor.sh
 
 # Redshift
 # Enabling redshift cancels gamma commands above
@@ -317,8 +318,8 @@ bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 
 
 # Gaps Settings
 for_window [class=".*"] border pixel 1
-gaps inner 2
-gaps outer 2
+gaps inner 6
+gaps outer 18
 smart_gaps on
 smart_borders on
 
@@ -415,6 +416,7 @@ exec unclutter
 # I want to use a bitmap font for my terminal
 # so I switched to rxvt-unicode
 #exec --no-startup-id kitty --class "scratchpad"
-exec --no-startup-id urxvt -name "scratchpad" -e tmux
+#exec --no-startup-id urxvt -name "scratchpad" -e tmux
+exec --no-startup-id alacritty --class "scratchpad" -e tmux -u
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+grave [instance="scratchpad"] scratchpad show
