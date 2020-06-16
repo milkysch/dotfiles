@@ -1,3 +1,4 @@
 .config/mpd/database
 .config/mpv/shaders/*
 .config/nvim/plugged/*
+.config/nvim/.netrwhist
