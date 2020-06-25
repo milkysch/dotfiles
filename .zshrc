@@ -47,7 +47,8 @@ export vblank_mode=0
 # it's not worth using this patch outside of rhythm games
 # Literally 1 CPU core working full time for pulseaudio only
 # because of this thing.
-#export STAGING_AUDIO_DURATION=20000
+export STAGING_AUDIO_DURATION=8000
+export STAGING_AUDIO_PERIOD=2500
 
 # i3 terminal variable
 # kitty's lack of bitmap font support outweights all of rxvt-unicode problems
@@ -84,9 +85,8 @@ alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
 alias dislock="sudo sh ~/critical/unlockalt.sh"
-alias osu="WINEPREFIX=~/.wine-osu wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
-alias wine-lol-en="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe -locale=en_US"
-alias wine-lol-jp="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe -locale=ja_JP"
+alias osu="WINEPREFIX=~/.wine-osu /opt/wine-osu/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
+alias wine-lol="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
 alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias mpv="vblank_mode=1 mpv"
 alias nnn="nnn -e -x"

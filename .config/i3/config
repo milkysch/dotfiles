@@ -292,8 +292,7 @@ exec xrandr --output DVI-D-0 --gamma 0.83
 exec bash ~/scripts/72hzmonitor.sh
 
 # Redshift
-# Enabling redshift cancels gamma commands above
-#exec redshift
+exec redshift
 
 # mpDris2
 # MPRIS support for MPD
@@ -317,8 +316,8 @@ bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 
 
 # Gaps Settings
 for_window [class=".*"] border pixel 1
-gaps inner 2
-gaps outer 2
+gaps inner 16
+gaps outer 36
 smart_gaps on
 smart_borders on
 

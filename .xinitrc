@@ -6,7 +6,7 @@
 ## Picom
 # Enables GPU window rendering and other stuff inc. VSync 
 # so it will introduce at least one frame of input lag!
-# Sometimes gets my computer stuck at 60hz, so disabled.
+# Sometimes gets my computer stuck at 60hz so, disabled.
 #picom -b -d :0
 
 ## dunst service bug workaround
