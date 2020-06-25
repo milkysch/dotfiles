@@ -53,8 +53,9 @@ export STAGING_AUDIO_PERIOD=32000
 # i3 terminal variable
 # kitty's lack of bitmap font support outweights all of rxvt-unicode problems
 # alacritty supports everything and it's just better :)
-export TERMINAL=alacritty
-#export TERMINAL=urxvt
+# nevermind it's font fallback support isn't that good
+#export TERMINAL=alacritty
+export TERMINAL=urxvt
 #export TERMINAL=kitty
 
 # IBus

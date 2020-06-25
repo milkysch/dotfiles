@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if ! { [ "$TERM" = "tmux-256color" ] && [ -n "$TMUX" ]; } then
+if ! { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
     urxvt -e nvim $* &
 else
     # tmux session running

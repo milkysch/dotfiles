@@ -28,7 +28,7 @@ client.background       $bg
 
 set $mod Mod4
 # Alt controls second monitor workspaces
-set $mod2 Mod1
+set $mod2 Mod4+Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -273,28 +273,13 @@ bindsym $mod+r mode "resize"
 # Personal Settings start here!
 ######################
 
-## mons ends up being too late in executing its parts so I'm working around that using xrandr
-# Set DVI monitor as primary
-#exec mons --primary DVI-D-0
-
-# Second monitor on HDMI displayed on the right
-#exec mons -e right
-
-# Make sure display is set @ 144Hz and on the left side of HDMI monitor
-# This xrandr command sometimes doesn't work when it's executed by i3
-# Therefore I placed this line in an additional startup script
-# down below
-
-#exec xrandr --output DVI-D-0 --gamma 0.83
-#exec xrandr --output HDMI-A-1 --gamma 1
-
-# Set secondary monitor at 72hz to get perfect sync with 24fps movies
-# We don't need this on a laptop
-#exec bash ~/scripts/72hzmonitor.sh
+# Multimonitor config for notebook
+# HDMI-A-0 being directly above eDP (which is an internal laptop display)
+exec bash ~/scripts/topdownmonitor.sh
 
 # Redshift
 # Enabling redshift cancels gamma commands above
-#exec redshift
+exec redshift
 
 # mpDris2
 # MPRIS support for MPD
@@ -319,7 +304,7 @@ bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 
 # Gaps Settings
 for_window [class=".*"] border pixel 1
 gaps inner 6
-gaps outer 18
+gaps outer 6
 smart_gaps on
 smart_borders on
 
@@ -416,7 +401,7 @@ exec unclutter
 # I want to use a bitmap font for my terminal
 # so I switched to rxvt-unicode
 #exec --no-startup-id kitty --class "scratchpad"
-#exec --no-startup-id urxvt -name "scratchpad" -e tmux
-exec --no-startup-id alacritty --class "scratchpad" -e tmux -u
+exec --no-startup-id urxvt -name "scratchpad" -e tmux
+#exec --no-startup-id alacritty --class "scratchpad" -e tmux -u
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+grave [instance="scratchpad"] scratchpad show
