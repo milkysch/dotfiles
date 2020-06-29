@@ -34,6 +34,6 @@ echo "Symlinking .Xresources to $HOME/.Xresources"
 rm $HOME/.Xresources 
 ln -s $(dirname $(readlink -f $0))/.Xresources $HOME/.Xresources
 echo "Symlinking .ncmpcpp to $HOME/.ncmpcpp"
-rm $HOME/.ncmpcpp
+rm -r $HOME/.ncmpcpp
 ln -s $(dirname $(readlink -f $0))/.ncmpcpp $HOME/.ncmpcpp
 echo "Everything's done!"

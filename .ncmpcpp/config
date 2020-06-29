@@ -1,6 +1,6 @@
 mpd_host =			127.0.0.1
 mpd_port =			6600
-mpd_music_dir =			/mnt/bitlocker/sdb1/Music
+mpd_music_dir =    ~/Music
 user_interface = 		alternative 
 song_columns_list_format = (7f)[green]{l} (20)[cyan]{a} (45)[yellow]{t|f:Title} (25)[green]{b}
 display_bitrate =		yes
