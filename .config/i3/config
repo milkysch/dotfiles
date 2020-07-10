@@ -215,7 +215,7 @@ workspace $ws6 output $monitor
 workspace $ws7 output $monitor
 workspace $ws8 output $monitor
 workspace $ws9 output $monitor
-workspace $ws10 output $monitor
+workspace $ws10 output DisplayPort-0 #Wtf
 workspace $ws11 output $monitor2
 workspace $ws12 output $monitor2
 workspace $ws13 output $monitor2
