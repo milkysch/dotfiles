@@ -285,7 +285,7 @@ bindsym $mod+r mode "resize"
 # Therefore I placed this line in an additional startup script
 # down below
 
-exec xrandr --output DVI-D-0 --gamma 0.83
+#exec xrandr --output DVI-D-0 --gamma 0.83
 #exec xrandr --output HDMI-A-1 --gamma 1
 
 # Set secondary monitor at 72hz to get perfect sync with 24fps movies
@@ -304,8 +304,11 @@ exec_always xrdb ~/.Xresources
 # Set a wallpaper
 exec_always --no-startup-id source ~/.fehbg
 
+# xiccd - icc profiles
+exec xiccd
+
 # Lockscreen
-bindsym $mod+Ctrl+l exec betterlockscreen -l dim -t "Zzz..."
+bindsym $mod+Ctrl+l exec betterlockscreen -l dim -t "Zzz..." --off 5 
 
 # Japanese support
 # done in .xinitrc
@@ -313,11 +316,12 @@ bindsym $mod+Ctrl+l exec betterlockscreen -l dim -t "Zzz..."
 
 # Program launcher
 bindsym $mod+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Cozette 9" -theme "~/.cache/wal/colors-rofi-dark.rasi"
+bindsym $mod+Shift+d exec rofi -modi drun -show drun -location 1 -xoffset 10 -yoffset 32 -line-padding 4 -columns 1 -width 35 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme "Papirus" -font "Cozette 9"
 
 # Gaps Settings
 for_window [class=".*"] border pixel 1
 gaps inner 16
-gaps outer 36
+gaps outer 0
 smart_gaps on
 smart_borders on
 
@@ -398,6 +402,8 @@ for_window [class="^steam_app_$"] floating enable
 # Smoothing
 #exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" Suppress 1
 #exec_always xsetwacom set "Wacom Intuos PT S Pen stylus" RawSample 2
+# Much easier to manage this way
+exec_always ~/scripts/wacom.sh
 
 # Make mouse act like in Windows because I can't rid of 2 decades worth of muscle memory that easily
 #focus_follows_mouse no #nvm its really aids like that

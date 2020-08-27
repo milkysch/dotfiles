@@ -1,4 +1,4 @@
-#include "/home/renne/.cache/wal/colors.Xresources"
+#include "/home/milky/.cache/wal/colors.Xresources"
 
 Xft.dpi: 96
 Xft.antialias: true
@@ -11,7 +11,7 @@ Xft.lcdfilter: lcddefault
 URxvt.font: xft:Cozette:style=Medium:size=12,xft:Zpix:style=Regular:size=9
 URxvt.boldFont: 
 URxvt.italicFont: 
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
 URxvt.internalBorder: 24
