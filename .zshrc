@@ -4,7 +4,7 @@ export VISUAL=ewrap
 export EDITOR=nvim
 
 # pip stores binaries here
-export PATH=$PATH:/home/renne/.local/bin
+export PATH=$PATH:/home/milky/.local/bin
 
 # Oh haha, fuck you.
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -42,11 +42,7 @@ export VKD3D_SHADER_DEBUG=none
 # Vsync
 export vblank_mode=0
 
-# Reduce audio delay in WINE at cost of CPU power
-# Actually processing power cost of this is so big
-# it's not worth using this patch outside of rhythm games
-# Literally 1 CPU core working full time for pulseaudio only
-# because of this thing.
+# wine-osu specific settings
 export STAGING_AUDIO_DURATION=8000
 export STAGING_AUDIO_PERIOD=2500
 
@@ -84,8 +80,7 @@ alias fixvideo="xrandr --output DVI-D-0 --mode 1920x1080 --rate 144"
 alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
 alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
-alias dislock="sudo sh ~/critical/unlockalt.sh"
-alias osu="WINEPREFIX=~/.wine-osu /opt/wine-osu/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/osu\!/osu\!.exe"
+alias osu="WINEPREFIX=~/.wine-osu WINEARCH=win32 /opt/wine-osu/bin/wine ~/.wine-osu/drive_c/Program\ Files/osu\!/osu\!.exe"
 alias wine-lol="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
 alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias mpv="vblank_mode=1 mpv"
@@ -113,7 +108,7 @@ bindkey  "^[[F"   end-of-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export ZSH="/home/renne/.oh-my-zsh"
+export ZSH="/home/milky/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 
@@ -127,3 +122,5 @@ plugins=(
         )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
