@@ -3,3 +3,6 @@
 .config/nvim/plugged/*
 .config/nvim/.netrwhist
 .ncmpcpp/error.log
+.config/spicetify/*
+!.config/spicetify/Themes
+!.config/spicetify/config.ini
