@@ -1,12 +1,13 @@
 # Editor settings
 # ewrap opens nvim in a split window when tmux is running
-export VISUAL=ewrap
+#export VISUAL=ewrap
 export EDITOR=nvim
 
 # pip stores binaries here
 export PATH=$PATH:/home/milky/.local/bin
 
-# Oh haha, fuck you.
+# I am not really a fan of telemetry.
+# I rather optout and report bugs myself.
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Turn off QT5 HiDPI scaling
@@ -77,11 +78,10 @@ alias mount="sudo mount"
 alias gamma="xrandr --output DVI-D-0 --gamma"
 alias saturation="~/scripts/saturation.pl DVI-D-0"
 alias fixvideo="xrandr --output DVI-D-0 --mode 1920x1080 --rate 144"
-alias theclassic="WINEDEBUG=default LANG=ja_JP.sjis"
-alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
+alias winedebug="WINEDEBUG=default LANG=ja_JP.sjis"
+#alias barrierstart="barriers -f --no-tray --enable-drag-drop --enable-crypto"
 alias psvita="mpv /dev/video0 --no-cache --untimed --no-demuxer-thread --video-sync=audio --vd-lavc-threads=1"
 alias osu="WINEPREFIX=~/.wine-osu WINEARCH=win32 /opt/wine-osu/bin/wine ~/.wine-osu/drive_c/Program\ Files/osu\!/osu\!.exe"
-alias wine-lol="WINEPREFIX=~/.wine-lol /opt/wine-lol/bin/wine /mnt/bitlocker/sdb1/Games/Riot\ Games/League\ of\ Legends/LeagueClient.exe"
 alias clearcache="sudo bash -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias mpv="vblank_mode=1 mpv"
 alias nnn="nnn -e -x"
